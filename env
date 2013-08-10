@@ -1,0 +1,88 @@
+source $TELENV
+alias F2 done
+alias F3 oops
+alias F4 show element
+alias F5 finish
+alias F7 vertex
+alias F8 color192
+alias F12 property edit
+alias =      subclass -+
+alias -      subclass --
+alias Insert define grid
+alias Esc cancel 
+alias Home zoom fit
+alias ~SZ  redo
+alias ~P 'shell explorer .'
+alias editenv shell notepad $HOME/pcbenv/env 
+alias env 'source -q $localenv/env'
+alias exp    plctxt out 
+alias F9 'settoggle  no_etch_shape_display;redraw' 
+
+funckey fn 'setwindow form.find;FORM find all_off;FORM find nets YES;setwindow pcb'
+funckey fs 'setwindow form.find;FORM find all_off;FORM find symbols YES;setwindow pcb'
+funckey fv 'setwindow form.find;FORM find all_off;FORM find vias YES;setwindow pcb'
+funckey fp 'setwindow form.find;FORM find all_off;FORM find pins YES;setwindow pcb'
+funckey fc 'setwindow form.find;FORM find all_off;FORM find clines YES;setwindow pcb'
+funckey fl 'setwindow form.find;FORM find all_off;FORM find lines YES;setwindow pcb'
+funckey fc 'setwindow form.find;FORM find all_off;FORM find clines YES;setwindow pcb'
+funckey fh 'setwindow form.find;FORM find all_off;FORM find shapes YES;setwindow pcb'
+funckey fd 'setwindow form.find;FORM find all_off;FORM find drc_errors YES;setwindow pcb'
+funckey ft 'setwindow form.find;FORM find all_off;FORM find text YES;setwindow pcb'
+funckey ff 'setwindow form.find;FORM find all_off;setwindow pcb'
+funckey fa 'setwindow form.find;FORM find all_on;setwindow pcb'
+
+funckey 11 "setwindow form.mini; FORM mini alt_subclass TOP"
+funckey 22 "setwindow form.mini; FORM mini alt_subclass INTERNAL1" 
+funckey 33 "setwindow form.mini; FORM mini alt_subclass INTERNAL2" 
+funckey 44 "setwindow form.mini; FORM mini alt_subclass INTERNAL3"
+funckey 55 "setwindow form.mini; FORM mini alt_subclass INTERNAL4"
+funckey 66 "setwindow form.mini; FORM mini alt_subclass BOTTOM"
+
+funckey m move
+funckey z mirror
+funckey d delete
+funckey h hilight
+funckey sd slide
+funckey ss custom smooth
+funckey st status
+funckey al add line
+funckey at add text
+funckey ch change
+funckey w add connect
+funckey b 'settoggle shove_mode "Hug only" "Hug preferred" "Shove preferred"; options bubble_space $shove_mode'
+funckey ' ' iangle 90
+funckey cm cmgr
+funckey cp copy
+funckey sh shape add 
+funckey sp split plane create
+funckey cb replay showbottom.scr
+funckey ct replay showtop.scr
+funckey cn replay shownone.scr
+funckey ccs replay showcustomcolor.scr
+funckey ccn replay notshowcustomcolor.scr
+funckey glp gloss param
+funckey rpcbm reports cbm
+funckey rpdl  reports
+
+
+
+### User Preferences section
+### This section is computer generated.
+### Please do not modify to the end of the file.
+### Place your hand edits above this section.
+###
+set scriptpath = . F:/Cadence/work/scr/ d:/Cadence/SPB_16.5/share/local/pcb/scripts d:/Cadence/SPB_16.5/share/pcb/text/script
+set menupath = $menupath
+unset disable_datatips
+set autosave_time = 15
+set autosave
+set padpath = . F:/Cadence/PcbLib/symbol symbols .. ../symbols d:/Cadence/SPB_16.5/share/local/pcb/padstacks d:/Cadence/SPB_16.5/share/pcb/pcb_lib/symbols d:/Cadence/SPB_16.5/share/pcb/allegrolib/symbols
+set psmpath = . F:/Cadence/PcbLib/symbol symbols .. ../symbols d:/Cadence/SPB_16.5/share/local/pcb/symbols d:/Cadence/SPB_16.5/share/pcb/pcb_lib/symbols d:/Cadence/SPB_16.5/share/pcb/allegrolib/symbols
+set allegro_dynam_timing_fixedpos
+set draw_etch_outline
+unset no_etch_shape_display
+unset no_shape_fill_dyn_ood
+unset no_shape_fill
+unset display_nodynamicarcwidth
+set ads_sdart = artwork
+set showmeasure_altunits = millimeters

@@ -1,7 +1,7 @@
 errset(loadi(strcat(axlOSSlash(getShellEnvVar("EDA365_SKILL")),"EDA365_Skill_Load.il")))
 (axlSetVariable "EMA_SkillAppsRoot" (strcat (axlGetVariable "home") "/Marketplace_SkillApps"))
 (load (strcat (axlGetVariable "EMA_SkillAppsRoot") "/SkillAppLoader/skill/loadSkillApps.il"))
-setSkillPath(buildString(append1(getSkillPath() "F:/Cadence/work/skill")))
+setSkillPath(buildString(append1(getSkillPath() strcat(axlGetVariable("localenv") "/skill"))))
 load("quick_artwork.il") 
 /*loadi("CmpPgV100.il" "yxjlcp")
 load("x_align_symbol.il" "deargds")

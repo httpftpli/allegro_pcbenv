@@ -6,8 +6,6 @@ alias F5 finish
 alias F7 vertex
 alias F8 color192
 alias F12 property edit
-alias =      subclass -+
-alias -      subclass --
 alias Insert define grid
 alias Esc cancel 
 alias Home zoom fit
@@ -17,6 +15,7 @@ alias editenv shell notepad $HOME/pcbenv/env
 alias env 'source -q $localenv/env'
 alias exp    plctxt out 
 alias F9 'settoggle  no_etch_shape_display;redraw' 
+
 
 funckey fn 'setwindow form.find;FORM find all_off;FORM find nets YES;setwindow pcb'
 funckey fs 'setwindow form.find;FORM find all_off;FORM find symbols YES;setwindow pcb'
@@ -42,6 +41,7 @@ funckey m move
 funckey z mirror
 funckey d delete
 funckey h hilight
+funckey t pop swap
 funckey sd slide
 funckey ss custom smooth
 funckey st status
@@ -49,8 +49,19 @@ funckey al add line
 funckey at add text
 funckey ch change
 funckey w add connect
-funckey b 'settoggle shove_mode "Hug only" "Hug preferred" "Shove preferred"; options bubble_space $shove_mode'
+funckey b 'settoggle shove_mode "Hug only" "Shove preferred"; options bubble_space $shove_mode'
 funckey ' ' iangle 90
+funckey =    subclass -+
+funckey -    subclass --
+funckey 1 'pop bbdrill;pop swap;subclass top'
+funckey 2 'pop bbdrill;pop swap;subclass top;+'
+funckey 3 'pop bbdrill;pop swap;subclass top;+;+'
+funckey 4 'pop bbdrill;pop swap;subclass top;+;+;+'
+funckey 5 'pop bbdrill;pop swap;subclass top;+;+;+;+'
+funckey 6 'pop bbdrill;pop swap;subclass top;+;+;+;+;+'
+funckey 7 'pop bbdrill;pop swap;subclass top;+;+;+;+;+;+'
+funckey 0 'pop bbdrill;pop swap;subclass bottom'
+funckey sw  pop swap
 funckey cm cmgr
 funckey cp copy
 funckey sh shape add 

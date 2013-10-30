@@ -21,6 +21,7 @@ procedure(quickart()
 			 /* -------------------------------------------------------------------
 			 list of the films wait for creating 
 			 -------------------------------------------------------------------*/ 
+            acc = axlGetParam("paramDesign")->accuracy
 	    etchLayers = axlSubclasses("Etch")
             nEtchLayers = length(etchLayers)
             ncdrilled = 0
@@ -30,7 +31,7 @@ procedure(quickart()
               	        if((axlIsLayer(drillToLayer) != nil) then
               	        	drillFilm = list("BOARD GEOMETRY/OUTLINE")
               	        	drillFilm = append1(drillFilm drillToLayer)
-              	        	l_params = '(0 0 0 600 125000 1 0 0 0 0 0 1 1 )
+              	        	l_params = list(0 0 0 6*(10**acc) 125*(10**acc) 0 0 0 0 0 0 1 1 )
               	        	sprintf(drillname "DRILL_%d_%d" i j)
               	        	axlfcreate(drillname l_params drillFilm )
               	        	ncdrilled = 1
@@ -48,16 +49,16 @@ procedure(quickart()
                                    strcat("VIA CLASS/",etchlayer) strcat("PIN/",etchlayer))
                      sprintf(layername "LAYER%d_%s" i etchlayer)
                      if(axlDBGetLayerType(strcat("ETCH/",etchlayer)) == "CONDUCTOR" then 
-                     	l_params = '(0 0 0 0 125000 1 0 0 0 0 0 1 1 )
-                     else                     	
-                     	l_params = '(0 0 0 0 125000 0 0 0 1 0 0 1 1 )
+                     	l_params = list(0 0 0 0 125*(10**acc) 0 0 0 0 0 0 1 1 )
+                     else                                            	
+                     	l_params = list(0 0 0 0 125*(10**acc) 1 0 0 1 0 0 1 1 )
                      )                     					 
                      axlfcreate(layername l_params etchfilm )                      
             )				   
              
 	     
            ; PASTEMASK_TOP
-           l_params = '(0 0 0 600 125000 1 0 0 0 0 0 1 1 )					 
+           l_params = list(0 0 0 6*(10**acc) 125*(10**acc) 0 0 0 0 0 0 1 1 )					 
            axlfcreate("PASTEMASK_TOP" l_params '("BOARD GEOMETRY/OUTLINE" "PIN/PASTEMASK_TOP" "BOARD GEOMETRY/PASTEMASK_TOP"))
            ; PASTEMASK_BOTTOM
            axlfcreate("PASTEMASK_BOTTOM" l_params '("BOARD GEOMETRY/OUTLINE" "PIN/PASTEMASK_BOTTOM" "BOARD GEOMETRY/PASTEMASK_BOTTOM"))
@@ -79,4 +80,5 @@ procedure(quickart()
 	)
 )
 
+	 
 	 
